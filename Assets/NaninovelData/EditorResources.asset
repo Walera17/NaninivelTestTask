@@ -229,12 +229,12 @@ MonoBehaviour:
     Resources:
     - name: Jody
       pathPrefix: Characters
-      guid: 6806f3c5cc71e5b428402fb2c96b8ff0
+      guid: 65201a9f169ecc04099740642f51a7d9
   - Id: Characters/a375ffd5-7ec9-4e01-8211-6d5ba6bf5459
     Resources:
     - name: Sophie
       pathPrefix: Characters
-      guid: b71fea14bd19fc54d9bc90c8679d9b9c
+      guid: 667ebb6da016b574495fc9aee1cc5f67
   - Id: Characters/50ac31d8-b2eb-4a1c-8de8-83931c1e9dbf
     Resources:
     - name: Sword

@@ -4,7 +4,7 @@
 
 @hidePrinter
 @wait 0.5
-@printer Bubble.Right pos:60,50
+@printer Bubble.Right pos:52,68
 Sophie: Мне нужен меч. Я хорошо заплачу. Добудешь?
 
 @wait 0.5
@@ -19,6 +19,7 @@ ElenNovel: Хорошо.Я достану и принесу тебе меч.
 @goto Location2
 
 # FinishDialog
+@back Location1
 @char Jody look:Left pos:50
 @char Sophie look:Left pos:75
 

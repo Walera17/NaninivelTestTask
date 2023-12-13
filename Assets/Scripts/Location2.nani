@@ -8,18 +8,20 @@ ElenNovel: Привет. Мне сказали ты знаешь, где дос�
 
 @set pathHelmet=false
 @wait 0.5
-@printer Bubble.Right pos:60,50
+@printer Bubble.Right pos:52,68
 Jody: Да. Я покажу тебе, где ты сможешь достать меч.
 @choice handler:MyHandlerSword button:SwordGame pos:750,300 goto:.GetSword
 @stop
 ;@goto .GetSword
 
 # JodyRepeatGetSword
+@printer Bubble.Right pos:52,68
 Jody: Ты не достал меч. Иди и принеси меч.
 @goto .GetSword
 
 # JodyGetHelmet
-Jody: Мне нужен шлем. Но добыть его можно только с помощью меча. Я хорошо заплачу. Добудешь?
+@printer Bubble.Right pos:52,68
+Jody: Ты достал меч. Молодец. Мне нужен шлем. Я хорошо заплачу. Добудешь?
 @wait 0.5
 @printer Wide
 ElenNovel: Хорошо.Я принесу тебе шлем.
@@ -30,6 +32,7 @@ ElenNovel: Хорошо.Я принесу тебе шлем.
 @stop
 
 # JodyRepeatGetHelmet
+@printer Bubble.Right pos:52,68
 Jody: Ты не достал шлем. Иди и принеси шлем.
 @goto .GetHelmet
 
@@ -39,9 +42,7 @@ Jody: Ты не достал шлем. Иди и принеси шлем.
 @unlock SuperSword if:RewardExist("Sword") 
 @unlock SuperHelmet if:RewardExist("Helmet") 
 
-;@choice "Получить меч" if:!RewardExist("Sword") goto:.GetSword
 @goto .JodyRepeatGetSword if:!RewardExist("Sword")
-;@choice "Получить шлем" if:"RewardExist("Sword") && !RewardExist("Helmet")" goto:.GetHelmet
 @goto .JodyGetHelmet if:"RewardExist("Sword") && !RewardExist("Helmet") && !pathHelmet"
 @goto .JodyRepeatGetHelmet if:"RewardExist("Sword") && !RewardExist("Helmet") && pathHelmet"
 @goto .Finish if:RewardExist("Helmet")
