@@ -166,3 +166,92 @@ MonoBehaviour:
     - name: ToastUI
       pathPrefix: UI
       guid: dd85ce99288c2f8488447fa511b1c0d6
+  - Id: Scripts
+    Resources:
+    - name: Title
+      pathPrefix: Scripts
+      guid: e40350776f68d594a89de98350546387
+    - name: Game
+      pathPrefix: Scripts
+      guid: 82481846e35deef4688ffbd5508e08e1
+    - name: Location1
+      pathPrefix: Scripts
+      guid: c2fae65375c5ea74686d391604be59ca
+    - name: Location2
+      pathPrefix: Scripts
+      guid: fe06bf0910f1b0e499446a056c914432
+  - Id: CharacterAvatars
+    Resources: []
+  - Id: Characters/ad77db49-7057-49ba-b585-f2393064d5b7
+    Resources:
+    - name: Elen
+      pathPrefix: Characters
+      guid: c0e02d33e2801364ba68a4b29474a7f7
+  - Id: Audio
+    Resources:
+    - name: Menu
+      pathPrefix: Audio
+      guid: 7fdfa78b067808c49b4cddda558e592d
+    - name: Game
+      pathPrefix: Audio
+      guid: b56e5bdbfaa27c64bbbf84bf4293b3a6
+  - Id: Backgrounds/2670ca49-a947-486d-803e-54c830e963a7
+    Resources:
+    - name: Menu
+      pathPrefix: Backgrounds/MainBackground
+      guid: d5639d404c7ac4d42ba34b1915158285
+    - name: Game
+      pathPrefix: Backgrounds/MainBackground
+      guid: 720bff9898a497748ac6f2886fced7fb
+    - name: Location1
+      pathPrefix: Backgrounds/MainBackground
+      guid: 9f0a24a78838c9745a6d184bd3756001
+    - name: Location2
+      pathPrefix: Backgrounds/MainBackground
+      guid: a25d186864eac834c93d7ba08000399d
+    - name: Location3
+      pathPrefix: Backgrounds/MainBackground
+      guid: 0d29d94ec42d34e448e9e26936b7640b
+  - Id: Unlockables
+    Resources:
+    - name: sword
+      pathPrefix: Unlockables
+      guid: bc09997d729c4cf4387010ee9e4010a1
+    - name: helmet
+      pathPrefix: Unlockables
+      guid: fe4f9451857dbfb4bbbb3bb3aa3915f4
+  - Id: Characters/492bf9ba-8afd-4c5e-aa5c-7d959103bd20
+    Resources:
+    - name: ElenNovel
+      pathPrefix: Characters
+      guid: ad5300e43dc49fa47a9901b940f4dc6f
+  - Id: Characters/33fab644-0daf-4d0f-90c3-0dd2f7cd7fd5
+    Resources:
+    - name: Jody
+      pathPrefix: Characters
+      guid: 6806f3c5cc71e5b428402fb2c96b8ff0
+  - Id: Characters/a375ffd5-7ec9-4e01-8211-6d5ba6bf5459
+    Resources:
+    - name: Sophie
+      pathPrefix: Characters
+      guid: b71fea14bd19fc54d9bc90c8679d9b9c
+  - Id: Characters/50ac31d8-b2eb-4a1c-8de8-83931c1e9dbf
+    Resources:
+    - name: Sword
+      pathPrefix: Characters
+      guid: 147f5203e76efab47953c6df7eadd0f5
+  - Id: Characters/fd477e2a-0791-4550-ad10-712bd85462bc
+    Resources:
+    - name: Helmet
+      pathPrefix: Characters
+      guid: f41869c83f5fdee45a13d5ec4ad4a393
+  - Id: ChoiceHandlers/4a9deaaf-0b2a-4252-91c1-ea407bbad1a2
+    Resources:
+    - name: MyHandlerSword
+      pathPrefix: ChoiceHandlers
+      guid: 74626884b8281804bb2ec08d83db33d2
+  - Id: ChoiceHandlers/ff232e9a-c9e6-48c3-8aa4-cba33d053e55
+    Resources:
+    - name: MyHandlerHelmet
+      pathPrefix: ChoiceHandlers
+      guid: 74626884b8281804bb2ec08d83db33d2

@@ -9,8 +9,7 @@ namespace Naninovel
     /// <summary>
     /// A <see cref="IActor"/> implementation using <see cref="MonoBehaviour"/> to represent the actor.
     /// </summary>
-    public abstract class MonoBehaviourActor<TMeta> : IActor, IDisposable
-        where TMeta : ActorMetadata
+    public abstract class MonoBehaviourActor<TMeta> : IActor, IDisposable where TMeta : ActorMetadata
     {
         public virtual string Id { get; }
         public virtual TMeta ActorMetadata { get; }

@@ -32,11 +32,11 @@ namespace Naninovel.UI
         protected virtual ChoiceHandlerButton DefaultButtonPrefab => defaultButtonPrefab;
         protected virtual bool FocusChoiceButtons => focusChoiceButtons;
 
-        [Tooltip("Container that will hold spawned choice buttons.")]
+        [Tooltip("Контейнер, в котором будут находиться появившиеся кнопки выбора.")]
         [SerializeField] private RectTransform buttonsContainer;
-        [Tooltip("Button prototype to use by default.")]
+        [Tooltip("Прототип кнопки для использования по умолчанию.")]
         [SerializeField] private ChoiceHandlerButton defaultButtonPrefab;
-        [Tooltip("Whether to focus added choice buttons for keyboard and gamepad control.")]
+        [Tooltip("Сфокусировать ли добавленные кнопки «Выбор» для управления клавиатурой и геймпадом.")]
         [SerializeField] private bool focusChoiceButtons = true;
 
         private IResourceLoader<GameObject> customButtonLoader;

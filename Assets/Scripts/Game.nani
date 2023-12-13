@@ -1,0 +1,17 @@
+;@startGame name:GameRed
+@back Game
+@bgm Game
+
+@hidePrinter
+@input name summary:"Выберете имя игрока"
+@stop
+
+@set PlayerName=name
+@char ElenNovel look:Right pos:25 scale:5.0
+
+ElenNovel: {name} - я твой аватар и мне приятно с тобой познакомиться
+
+@hidePrinter
+@goto Location1 
+
+@stop

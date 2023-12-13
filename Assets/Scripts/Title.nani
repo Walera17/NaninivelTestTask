@@ -1,0 +1,6 @@
+@back Menu
+@bgm Menu
+@char Elen pos:25,2 scale:6.0 
+@wait 1.5
+
+@stop

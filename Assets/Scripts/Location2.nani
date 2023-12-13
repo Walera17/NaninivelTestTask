@@ -1,0 +1,76 @@
+@back Location2
+@wait 0.5
+@char Jody look:Left pos:75 scale:4.8
+
+@wait 0.5
+@printer Wide
+ElenNovel: Привет. Мне сказали ты знаешь, где достать меч.
+
+@set pathHelmet=false
+@wait 0.5
+@printer Bubble.Right pos:60,50
+Jody: Да. Я покажу тебе, где ты сможешь достать меч.
+@choice handler:MyHandlerSword button:SwordGame pos:750,300 goto:.GetSword
+@stop
+;@goto .GetSword
+
+# JodyRepeatGetSword
+Jody: Ты не достал меч. Иди и принеси меч.
+@goto .GetSword
+
+# JodyGetHelmet
+Jody: Мне нужен шлем. Но добыть его можно только с помощью меча. Я хорошо заплачу. Добудешь?
+@wait 0.5
+@printer Wide
+ElenNovel: Хорошо.Я принесу тебе шлем.
+@set pathHelmet=true
+@char Helmet pos:8,95
+@lock SuperHelmet
+@choice handler:MyHandlerHelmet button:HelmetGame pos:50,300 goto:.GetHelmet
+@stop
+
+# JodyRepeatGetHelmet
+Jody: Ты не достал шлем. Иди и принеси шлем.
+@goto .GetHelmet
+
+# Choices
+@showUI
+@hidePrinter
+@unlock SuperSword if:RewardExist("Sword") 
+@unlock SuperHelmet if:RewardExist("Helmet") 
+
+;@choice "Получить меч" if:!RewardExist("Sword") goto:.GetSword
+@goto .JodyRepeatGetSword if:!RewardExist("Sword")
+;@choice "Получить шлем" if:"RewardExist("Sword") && !RewardExist("Helmet")" goto:.GetHelmet
+@goto .JodyGetHelmet if:"RewardExist("Sword") && !RewardExist("Helmet") && !pathHelmet"
+@goto .JodyRepeatGetHelmet if:"RewardExist("Sword") && !RewardExist("Helmet") && pathHelmet"
+@goto .Finish if:RewardExist("Helmet")
+@stop
+
+# GetSword
+@printer Wide
+@resetText  wait:false
+Сейчас Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз.
+@hidePrinter 
+@hideUI
+@setLabel name:Choices
+@startGame name:GameSword
+@stop
+
+# GetHelmet
+@printer Wide
+@resetText  wait:false
+Сейчас Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз.
+@hidePrinter 
+@hideUI 
+@setLabel name:Choices
+@startGame name:GameHelmet
+@stop
+
+# Finish
+@printer Wide
+@print text:"Все задачи выполнены."
+@hidePrinter 
+@set ChoiceVisible=false
+@goto Location1.FinishDialog
+@stop
