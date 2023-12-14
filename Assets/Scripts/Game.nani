@@ -1,6 +1,5 @@
-;@startGame name:GameRed
-@back Game
-@bgm Game
+@back Game time:1
+@bgm Game fade:1 wait:false
 
 @hidePrinter
 @input name summary:"Выберете имя игрока"

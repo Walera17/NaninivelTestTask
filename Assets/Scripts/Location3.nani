@@ -1,0 +1,49 @@
+@back Loc3 time:1
+
+@stop
+
+# GetWeapon
+@back Loc3 time:1
+@char SwordGame pos:75,80 if:"!pathHelmet && triesSword==0"
+@char HelmetGame pos:75,40 if:"pathHelmet && triesHelmet==0"
+@show SwordGame if:triesSword>0
+@show HelmetGame if:triesHelmet>0
+
+@printer Wide
+Сейчас Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз.
+@hidePrinter
+@setLabel name:Choices
+@goto .SwordGame if:!pathHelmet
+@goto .HelmetGame if:pathHelmet
+
+# SwordGame
+@set triesSword++
+@startGame name:GameSword
+@stop
+
+# HelmetGame
+@set triesHelmet++
+@startGame name:GameHelmet
+@stop
+
+# Choices
+@goto .SwordReward if:"RewardExist("Sword") && !RewardExist("Helmet") && !pathHelmet"
+@goto .HelmetReward if:"RewardExist("Helmet") && !finishGame"
+@hide SwordGame
+@hide HelmetGame if:triesHelmet>0
+@goto Location2.Choices
+
+# SwordReward
+@unlock SuperSword
+Поздравляем. Вы получили меч!
+@hide SwordGame
+@goto Location2.Choices
+
+# HelmetReward
+@unlock SuperHelmet
+@set finishGame=true
+Поздравляем. Вы получили шлем!
+@hide HelmetGame,SwordGame
+@goto Location2.Choices
+
+@stop

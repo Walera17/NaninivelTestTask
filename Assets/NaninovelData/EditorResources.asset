@@ -180,6 +180,9 @@ MonoBehaviour:
     - name: Location2
       pathPrefix: Scripts
       guid: fe06bf0910f1b0e499446a056c914432
+    - name: Location3
+      pathPrefix: Scripts
+      guid: 030b45b5c1271be4b94ea64c1c8e8db7
   - Id: CharacterAvatars
     Resources: []
   - Id: Characters/ad77db49-7057-49ba-b585-f2393064d5b7
@@ -203,13 +206,13 @@ MonoBehaviour:
     - name: Game
       pathPrefix: Backgrounds/MainBackground
       guid: 720bff9898a497748ac6f2886fced7fb
-    - name: Location1
+    - name: Loc1
       pathPrefix: Backgrounds/MainBackground
       guid: 9f0a24a78838c9745a6d184bd3756001
-    - name: Location2
+    - name: Loc2
       pathPrefix: Backgrounds/MainBackground
       guid: a25d186864eac834c93d7ba08000399d
-    - name: Location3
+    - name: Loc3
       pathPrefix: Backgrounds/MainBackground
       guid: 0d29d94ec42d34e448e9e26936b7640b
   - Id: Unlockables
@@ -255,3 +258,13 @@ MonoBehaviour:
     - name: MyHandlerHelmet
       pathPrefix: ChoiceHandlers
       guid: 74626884b8281804bb2ec08d83db33d2
+  - Id: Characters/c09245b4-b7e0-41d4-9ffe-29a7cc8f703c
+    Resources:
+    - name: HelmetGame
+      pathPrefix: Characters
+      guid: d0a8fa9dffbac4147ae03a14ad57c71a
+  - Id: Characters/2d3c5563-dc81-4ec4-b659-7b8181b55660
+    Resources:
+    - name: SwordGame
+      pathPrefix: Characters
+      guid: 3f5d67036816dc04a8193c35d5d43cda

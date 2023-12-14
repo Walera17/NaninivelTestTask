@@ -1,16 +1,19 @@
-@back Location1
+@back Loc1 time:1
 @wait 0.5
 @char Sophie look:Left pos:75 scale:4.8
 
-@hidePrinter
+;@hidePrinter
 @wait 0.5
+ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться
+
 @printer Bubble.Right pos:52,68
-Sophie: Мне нужен меч. Я хорошо заплачу. Добудешь?
+Sophie: Меня зовут Sophie и мне приятно с тобой познакомиться. Мне нужен меч. Я хорошо заплачу. Добудешь?
 
 @wait 0.5
 @printer Wide
 ElenNovel: Хорошо.Я достану и принесу тебе меч.
 
+@set finishGame=false
 @char Sword pos:3,95
 @lock SuperSword
 @wait 1.0
@@ -19,7 +22,7 @@ ElenNovel: Хорошо.Я достану и принесу тебе меч.
 @goto Location2
 
 # FinishDialog
-@back Location1
+@back Loc1 time:1
 @char Jody look:Left pos:50
 @char Sophie look:Left pos:75
 
