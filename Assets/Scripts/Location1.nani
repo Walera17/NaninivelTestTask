@@ -10,7 +10,7 @@ ElenNovel: Привет. Меня зовут {name} и мне приятно с 
 Sophie: Меня зовут Sophie и мне приятно с тобой познакомиться. Мне нужен меч. Я хорошо заплачу. Добудешь?
 
 @wait 0.5
-@printer Wide
+@printer Dialogue
 ElenNovel: Хорошо.Я достану и принесу тебе меч.
 
 @set finishGame=false

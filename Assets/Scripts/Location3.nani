@@ -4,13 +4,15 @@
 
 # GetWeapon
 @back Loc3 time:1
+
 @char SwordGame pos:75,80 if:"!pathHelmet && triesSword==0"
 @char HelmetGame pos:75,40 if:"pathHelmet && triesHelmet==0"
 @show SwordGame if:triesSword>0
 @show HelmetGame if:triesHelmet>0
 
-@printer Wide
-Сейчас Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз.
+;@printer Wide
+@printer Dialogue
+@print text:"Сейчас Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
 @hidePrinter
 @setLabel name:Choices
 @goto .SwordGame if:!pathHelmet

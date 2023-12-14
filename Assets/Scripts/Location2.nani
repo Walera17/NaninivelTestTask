@@ -10,6 +10,7 @@ ElenNovel: Привет. Меня зовут {name} и мне приятно с 
 @set triesHelmet=0
 @set pathHelmet=false
 @wait 0.5
+
 @printer Bubble.Right pos:52,68
 Jody: Меня зовут Jody и мне приятно с тобой познакомиться. Да я покажу тебе, где ты сможешь достать меч.
 @hidePrinter
@@ -26,12 +27,14 @@ Jody: Ты не достал меч. Иди и принеси меч.
 # JodyGetHelmet
 @printer Bubble.Right pos:52,68
 Jody: Ты достал меч. Молодец. Мне нужен шлем. Я хорошо заплачу. Добудешь?
+
 @wait 0.5
-@printer Wide
+@printer Dialogue
 ElenNovel: Хорошо.Я принесу тебе шлем.
 @set pathHelmet=true
 @char Helmet pos:8,95
 @lock SuperHelmet
+
 @printer Bubble.Right pos:52,68
 Jody: Вот место, где ты сможешь достать шлем
 @hidePrinter
@@ -49,14 +52,11 @@ Jody: Ты не достал шлем. Иди и принеси шлем.
 @back Loc2.RadialBlur time:1
 @set ChoiceVisible=true
 @show Jody 
-;@unlock SuperSword if:RewardExist("Sword")
-;@unlock SuperHelmet if:RewardExist("Helmet") 
 
 @goto .JodyRepeatGetSword if:!RewardExist("Sword")
 @goto .JodyGetHelmet if:"!RewardExist("Helmet") && !pathHelmet"
 @goto .JodyRepeatGetHelmet if:"!RewardExist("Helmet") && pathHelmet"
 @goto .Finish if:RewardExist("Helmet")
-@stop
 
 # GotoLocation3
 @set ChoiceVisible=false
@@ -65,7 +65,7 @@ Jody: Ты не достал шлем. Иди и принеси шлем.
 @goto Location3.GetWeapon
 
 # Finish
-@printer Wide
+@printer Dialogue
 @print text:"Все задачи выполнены."
 @hidePrinter 
 @set ChoiceVisible=false

@@ -1,7 +1,7 @@
 @back Game time:1
 @bgm Game fade:1 wait:false
 
-@hidePrinter
+@printer Dialogue
 @input name summary:"Выберете имя игрока"
 @stop
 
