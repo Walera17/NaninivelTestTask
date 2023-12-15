@@ -3,7 +3,6 @@
 @char Jody look:Left pos:75 scale:4.8
 
 @wait 0.5
-;@printer Wide
 ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч.
 
 @set triesSword=0

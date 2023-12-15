@@ -1,0 +1,37 @@
+; English <en> to Russian <ru> localization document for `Location2` naninovel script
+
+# 6b2ab48e
+; ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч.
+
+# aed9e11c
+; Jody: Меня зовут Jody и мне приятно с тобой познакомиться. Да я покажу тебе, где ты сможешь достать меч.
+
+# ada5610c
+; @choice handler:MyHandlerSword button:SwordGame pos:750,300 goto:.GotoLocation3
+
+# c99ea986
+; Jody: Ты не достал меч. Иди и принеси меч.
+
+# ada5610c
+; @choice handler:MyHandlerSword button:SwordGame pos:750,300 goto:.GotoLocation3
+
+# 739f5ca4
+; Jody: Ты достал меч. Молодец. Мне нужен шлем. Я хорошо заплачу. Добудешь?
+
+# 99b8d1
+; ElenNovel: Хорошо.Я принесу тебе шлем.
+
+# a154e17f
+; Jody: Вот место, где ты сможешь достать шлем
+
+# 9a9c1f46
+; @choice handler:MyHandlerHelmet button:HelmetGame pos:750,-50 goto:.GotoLocation3
+
+# 3f55134
+; Jody: Ты не достал шлем. Иди и принеси шлем. 
+
+# 9a9c1f46
+; @choice handler:MyHandlerHelmet button:HelmetGame pos:750,-50 goto:.GotoLocation3
+
+# d16ccbcb
+; @print text:"Все задачи выполнены."

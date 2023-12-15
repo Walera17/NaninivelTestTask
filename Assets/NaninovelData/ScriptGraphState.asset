@@ -23,21 +23,28 @@ MonoBehaviour:
   - scriptName: Game
     position:
       serializedVersion: 2
-      x: 95
-      y: -19
-      width: 174
-      height: 128
+      x: 105
+      y: -22
+      width: 128
+      height: 101
   - scriptName: Location1
     position:
       serializedVersion: 2
-      x: 300
-      y: 21
-      width: 155
-      height: 197
+      x: 276
+      y: 7
+      width: 129
+      height: 125
   - scriptName: Location2
     position:
       serializedVersion: 2
-      x: 494
-      y: -26
+      x: 499
+      y: -120
+      width: 199
+      height: 461
+  - scriptName: Location3
+    position:
+      serializedVersion: 2
+      x: 773
+      y: -75
       width: 174
-      height: 341
+      height: 389

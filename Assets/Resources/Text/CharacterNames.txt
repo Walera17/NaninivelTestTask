@@ -1,0 +1,8 @@
+Elen: Elen
+ElenNovel: {PlayerName}
+Helmet: 
+HelmetGame: 
+Jody: Jody
+Sophie: Sophie
+Sword: 
+SwordGame: 
