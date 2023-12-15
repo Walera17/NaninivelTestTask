@@ -454,7 +454,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptName: 
-  scriptText: '@startGame name:GameSword'
+  scriptText: '@startGame name:GameSword
+
+    @stopBgm Locat2 fade:1 wait:false
+
+    @bgm
+    Game fade:1 wait:false loop:true'
   playOnAwake: 0
   disableWaitInput: 0
 --- !u!1 &6067919106039989630

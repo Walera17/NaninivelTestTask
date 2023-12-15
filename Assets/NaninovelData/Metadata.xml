@@ -484,6 +484,14 @@
         &lt;Type&gt;Audio&lt;/Type&gt;
       &lt;/Resource&gt;
       &lt;Resource&gt;
+        &lt;Path&gt;Locat1&lt;/Path&gt;
+        &lt;Type&gt;Audio&lt;/Type&gt;
+      &lt;/Resource&gt;
+      &lt;Resource&gt;
+        &lt;Path&gt;Locat2&lt;/Path&gt;
+        &lt;Type&gt;Audio&lt;/Type&gt;
+      &lt;/Resource&gt;
+      &lt;Resource&gt;
         &lt;Path&gt;Menu&lt;/Path&gt;
         &lt;Type&gt;Backgrounds/MainBackground&lt;/Type&gt;
       &lt;/Resource&gt;

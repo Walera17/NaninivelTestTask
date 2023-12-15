@@ -198,6 +198,12 @@ MonoBehaviour:
     - name: Game
       pathPrefix: Audio
       guid: b56e5bdbfaa27c64bbbf84bf4293b3a6
+    - name: Locat1
+      pathPrefix: Audio
+      guid: 466a21c6e24020845af5ed1b7b5a4e19
+    - name: Locat2
+      pathPrefix: Audio
+      guid: 071b73edd7c39f540ad21ea0326340b9
   - Id: Backgrounds/2670ca49-a947-486d-803e-54c830e963a7
     Resources:
     - name: Menu

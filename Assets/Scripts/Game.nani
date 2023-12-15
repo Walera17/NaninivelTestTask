@@ -1,4 +1,5 @@
 @back Game time:1
+
 @bgm Game fade:1 wait:false
 
 @printer Dialogue
@@ -11,6 +12,7 @@
 ElenNovel: {name} - я твой аватар и мне приятно с тобой познакомиться
 
 @hidePrinter
+@stopBgm Game fade:1 wait:false
 @goto Location1 
 
 @stop

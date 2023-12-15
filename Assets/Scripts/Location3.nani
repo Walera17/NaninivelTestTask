@@ -11,23 +11,18 @@
 @show HelmetGame if:triesHelmet>0
 
 @printer Dialogue
-@print text:"Сейчас Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
+@print text:"Сделайте выбор на карте и Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
 @hidePrinter
 @setLabel name:Choices
 @disableBlockRayCast
-@goto .SwordGame if:!pathHelmet
-@goto .HelmetGame if:pathHelmet
 
-# SwordGame
-@set triesSword++
-;@startGame name:GameSword
-@stop
-
-# HelmetGame
-@set triesHelmet++
-;@startGame name:GameHelmet
-@stop
-
+@if !pathHelmet
+    @set triesSword++
+    @stop
+@else
+    @set triesHelmet++
+    @stop
+    
 # Choices
 @enableBlockRayCast
 @goto .SwordReward if:"RewardExist("Sword") && !RewardExist("Helmet") && !pathHelmet"

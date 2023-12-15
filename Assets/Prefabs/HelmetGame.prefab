@@ -370,7 +370,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptName: 
-  scriptText: '@startGame name:GameHelmet'
+  scriptText: '@startGame name:GameHelmet
+
+    @stopBgm Locat2 fade:1 wait:false
+
+    @bgm
+    Game fade:1 wait:false loop:true'
   playOnAwake: 0
   disableWaitInput: 0
 --- !u!1 &5867293405465140486

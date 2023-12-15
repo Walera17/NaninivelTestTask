@@ -1,9 +1,11 @@
 @back Loc2 time:1
+@stopBgm Locat1 fade:1 wait:false
+@bgm Locat2 fade:1 wait:false loop:true
 @wait 0.5
 @char Jody look:Left pos:75 scale:4.8
 
 @wait 0.5
-ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч.
+ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч?
 
 @set triesSword=0
 @set triesHelmet=0
@@ -12,16 +14,17 @@ ElenNovel: Привет. Меня зовут {name} и мне приятно с 
 
 @printer Bubble.Right pos:52,68
 Jody: Меня зовут Jody и мне приятно с тобой познакомиться. Да я покажу тебе, где ты сможешь достать меч.
+@goto .GetSword
+
+# GetSword
 @hidePrinter
-@choice handler:MyHandlerSword button:SwordGame pos:750,300 goto:.GotoLocation3
+@choice handler:MyHandlerSword button:SwordGame pos:750,350 goto:.GotoLocation3
 @stop
 
 # JodyRepeatGetSword
 @printer Bubble.Right pos:52,68
 Jody: Ты не достал меч. Иди и принеси меч.
-@hidePrinter
-@choice handler:MyHandlerSword button:SwordGame pos:750,300 goto:.GotoLocation3
-@stop
+@goto .GetSword
 
 # JodyGetHelmet
 @printer Bubble.Right pos:52,68
@@ -36,18 +39,22 @@ ElenNovel: Хорошо.Я принесу тебе шлем.
 
 @printer Bubble.Right pos:52,68
 Jody: Вот место, где ты сможешь достать шлем
+@goto .GetHelmet
+
+# GetHelmet
 @hidePrinter
-@choice handler:MyHandlerHelmet button:HelmetGame pos:750,-50 goto:.GotoLocation3
+@choice handler:MyHandlerHelmet button:HelmetGame pos:750,100 goto:.GotoLocation3
 @stop
 
 # JodyRepeatGetHelmet
 @printer Bubble.Right pos:52,68
-Jody: Ты не достал шлем. Иди и принеси шлем. 
-@hidePrinter
-@choice handler:MyHandlerHelmet button:HelmetGame pos:750,-50 goto:.GotoLocation3
-@stop
+Jody: Ты не достал шлем. Иди и принеси шлем.
+ @goto .GetHelmet
 
 # Choices
+@stopBgm Game fade:5 wait:false
+@bgm Locat2 fade:1 wait:false loop:true
+
 @back Loc2.RadialBlur time:1
 @set ChoiceVisible=true
 @show Jody 
