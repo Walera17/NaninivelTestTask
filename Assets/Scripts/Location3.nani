@@ -14,7 +14,6 @@
 @print text:"Сделайте выбор на карте и Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
 @hidePrinter
 @setLabel name:Choices
-@disableBlockRayCast
 
 @if !pathHelmet
     @set triesSword++
@@ -22,9 +21,8 @@
 @else
     @set triesHelmet++
     @stop
-    
+
 # Choices
-@enableBlockRayCast
 @goto .SwordReward if:"RewardExist("Sword") && !RewardExist("Helmet") && !pathHelmet"
 @goto .HelmetReward if:"RewardExist("Helmet") && !finishGame"
 @hide SwordGame
