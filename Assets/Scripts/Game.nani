@@ -2,14 +2,14 @@
 
 @bgm Game fade:1 wait:false
 
-@printer Dialogue
 @input name summary:"Выберете имя игрока"
 @stop
 
 @set PlayerName=name
-@char ElenNovel look:Right pos:25 scale:5.0
+@char ElenNovel look:Right pos:25 scale:5.0 wait:false
 
-ElenNovel: {name} - я твой аватар и мне приятно с тобой познакомиться
+@printer Dialogue
+ElenNovel: Привет {name} - я твой аватар и мне приятно с тобой познакомиться
 
 @hidePrinter
 @stopBgm Game fade:1 wait:false

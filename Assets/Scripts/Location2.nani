@@ -15,8 +15,10 @@ ElenNovel: Привет. Меня зовут {name} и мне приятно с 
 @char Jody.Greeting
 Jody: Меня зовут Jody и мне приятно с тобой познакомиться. Да я покажу тебе, где ты сможешь достать меч.
 @char Jody.HandsForward
-Jody: "Вот место, где ты сможешь достать шлем"
+Jody: Вот место,где ты сможешь достать меч
+@hidePrinter
 @goto .GetSword
+@stop
 
 # GetSword
 @hidePrinter
@@ -25,17 +27,21 @@ Jody: "Вот место, где ты сможешь достать шлем"
 
 # JodyRepeatGetSword
 @printer Bubble.Right pos:52,68
+@showLog name:"Не удалось достать меч"
 @char Jody.Dismissing
 Jody: Ты не достал меч. Иди и принеси меч.
 @goto .GetSword
 
 # JodyGetHelmet
 @printer Bubble.Right pos:52,68
+@wait 0.5
+@char Jody.HappyHand
 Jody: Ты достал меч. Молодец. Мне нужен шлем. Я хорошо заплачу. Добудешь?
 
 @wait 0.5
 @printer Dialogue
 @char ElenNovel.Thinking
+@wait 2.5
 ElenNovel: Хорошо.Я принесу тебе шлем.
 @showLog name:"Достать шлем для Jody"
 @set pathHelmet=true
@@ -44,7 +50,7 @@ ElenNovel: Хорошо.Я принесу тебе шлем.
 
 @printer Bubble.Right pos:52,68
 @char Jody.HandsForward
-Jody: "Вот место, где ты сможешь достать шлем"
+Jody: Вот место, где ты сможешь достать шлем
 @goto .GetHelmet
 
 # GetHelmet
@@ -54,14 +60,15 @@ Jody: "Вот место, где ты сможешь достать шлем"
 
 # JodyRepeatGetHelmet
 @printer Bubble.Right pos:52,68
+@showLog name:"Не удалось достать шлем"
 @char Jody.Dismissing
 Jody: Ты не достал шлем. Иди и принеси шлем.
  @goto .GetHelmet
 
 # Choices
-@stopBgm Game fade:5 wait:false
+@stopBgm Game fade:1 wait:false
 @bgm Locat2 fade:1 wait:false loop:true
-
+@show ElenNovel
 @back Loc2.RadialBlur time:1
 @set ChoiceVisible=true
 @show Jody 
@@ -69,19 +76,11 @@ Jody: Ты не достал шлем. Иди и принеси шлем.
 @goto .JodyRepeatGetSword if:!RewardExist("Sword")
 @goto .JodyGetHelmet if:"!RewardExist("Helmet") && !pathHelmet"
 @goto .JodyRepeatGetHelmet if:"!RewardExist("Helmet") && pathHelmet"
-@goto .Finish if:RewardExist("Helmet")
 
 # GotoLocation3
 @set ChoiceVisible=false
 @hidePrinter
 @hide Jody
 @goto Location3.GetWeapon
-
-# Finish
-@printer Dialogue
-@print text:"Все задачи выполнены."
-@hidePrinter 
-@set ChoiceVisible=false
-@goto Location1.FinishDialog
 
 @stop

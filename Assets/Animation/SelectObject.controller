@@ -90,7 +90,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Deselect
+    m_ConditionEvent: Default
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8379239504560424026}
@@ -112,7 +112,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SelectGame
+  m_Name: SelectObject
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Select
@@ -121,7 +121,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Deselect
+  - m_Name: Default
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0

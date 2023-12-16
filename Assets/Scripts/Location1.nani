@@ -14,7 +14,8 @@ Sophie: Меня зовут Sophie и мне приятно с тобой поз
 @wait 0.5
 @printer Dialogue
 @char ElenNovel.Thinking
-ElenNovel: Хорошо.Я достану и принесу тебе меч.
+@wait 2.5
+ElenNovel: Хорошо.Я достану и принесу тебе меч. 
 @showLog name:"Достать меч для Sophie"
 
 @set finishGame=false
@@ -29,6 +30,7 @@ ElenNovel: Хорошо.Я достану и принесу тебе меч.
 @showLog name:"Все задачи выполнены."
 @hideUI QuestUI time:5  wait:false
 @back Loc1 time:1
+@char ElenNovel look:Right pos:25
 @char Jody look:Left pos:50
 @char Sophie look:Left pos:75
 
