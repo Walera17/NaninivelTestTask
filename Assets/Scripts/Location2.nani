@@ -8,8 +8,6 @@
 @char ElenNovel.Greeting
 ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч?
 
-@set triesSword=0
-@set triesHelmet=0
 @set pathHelmet=false
 @wait 0.5
 

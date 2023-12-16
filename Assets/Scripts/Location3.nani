@@ -1,14 +1,16 @@
-@back Loc3 time:1
+@hide Jody,Sophie time:0.5
 
+@back Loc3 time:1
+@char SwordGame pos:75,80
+@char HelmetGame pos:75,40
 
 @stop
 
 # GetWeapon
 @back Loc3 time:1
-@char SwordGame.Deselect pos:75,80 if:"!pathHelmet && triesSword==0"
-@char HelmetGame.Deselect pos:75,40 if:"pathHelmet && triesHelmet==0"
-@show SwordGame if:triesSword>0
-@show HelmetGame if:triesHelmet>0
+@char SwordGame pos:75,80
+@char HelmetGame pos:75,40
+@hide HelmetGame if:!pathHelmet
 
 @printer Dialogue
 
@@ -19,23 +21,16 @@
 @setLabel name:Choices
 
 @if !pathHelmet
-    @set triesSword++
     @char SwordGame.Select
-    ;@startGame name:GameSword
     @stop
 @else
-    @set triesHelmet++
     @char HelmetGame.Select
-    ;@startGame name:GameHelmet
     @stop
 
 # Choices
-@goto .SwordReward if:"RewardExist("Sword") && !RewardExist("Helmet") && !pathHelmet"
+@goto .SwordReward if:"RewardExist("Sword") && !pathHelmet"
 @goto .HelmetReward if:"RewardExist("Helmet") && !finishGame"
-@char SwordGame.Deselect
-@hide SwordGame
-@char HelmetGame.Deselect if:triesHelmet>0
-@hide HelmetGame if:triesHelmet>0
+@hide SwordGame,HelmetGame
 @goto Location2.Choices
 
 # SwordReward
