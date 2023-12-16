@@ -2,17 +2,20 @@
 @bgm Locat1 fade:1 wait:false loop:true
 @wait 0.5
 @char Sophie look:Left pos:75 scale:4.8
-
-;@hidePrinter
+@showUI QuestUI
 @wait 0.5
+@char ElenNovel.Greeting
 ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться
 
 @printer Bubble.Right pos:52,68
+@char Sophie.Greeting
 Sophie: Меня зовут Sophie и мне приятно с тобой познакомиться. Мне нужен меч. Я хорошо заплачу. Добудешь?
 
 @wait 0.5
 @printer Dialogue
+@char ElenNovel.Thinking
 ElenNovel: Хорошо.Я достану и принесу тебе меч.
+@showLog name:"Достать меч для Sophie"
 
 @set finishGame=false
 @char Sword pos:3,95
@@ -23,8 +26,16 @@ ElenNovel: Хорошо.Я достану и принесу тебе меч.
 @goto Location2
 
 # FinishDialog
+@showLog name:"Все задачи выполнены."
+@hideUI QuestUI time:5  wait:false
 @back Loc1 time:1
 @char Jody look:Left pos:50
 @char Sophie look:Left pos:75
+
+
+
+
+
+@choice handler:ButtonArea button:MapButton pos:750,200 goto:Location3
 
 @stop

@@ -1,5 +1,6 @@
 @back Loc3 time:1
 
+
 @stop
 
 # GetWeapon
@@ -11,15 +12,19 @@
 @show HelmetGame if:triesHelmet>0
 
 @printer Dialogue
-@print text:"Сделайте выбор на карте и Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
+@print text:"Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
 @hidePrinter
+@stopBgm Locat2 fade:1 wait:false
+@bgm Game fade:1 wait:false loop:true
 @setLabel name:Choices
 
 @if !pathHelmet
     @set triesSword++
+    @startGame name:GameSword
     @stop
 @else
     @set triesHelmet++
+    @startGame name:GameHelmet
     @stop
 
 # Choices
@@ -31,6 +36,7 @@
 
 # SwordReward
 @unlock SuperSword
+@showLog name:"Меч для Sophie получен"
 @print text:"Поздравляем. Вы получили меч!"
 @hide SwordGame
 @goto Location2.Choices
@@ -38,6 +44,7 @@
 # HelmetReward
 @unlock SuperHelmet
 @set finishGame=true
+@showLog name:"Шлем для Jody получен"
 @print text:"Поздравляем. Вы получили шлем!"
 @hide HelmetGame,SwordGame
 @goto Location2.Choices

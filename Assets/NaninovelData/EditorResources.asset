@@ -163,6 +163,9 @@ MonoBehaviour:
     - name: ToastUI
       pathPrefix: UI
       guid: dd85ce99288c2f8488447fa511b1c0d6
+    - name: QuestUI
+      pathPrefix: UI
+      guid: 9a75ce6ea943c0045b2b48ac6384e0bb
   - Id: Scripts
     Resources:
     - name: Title

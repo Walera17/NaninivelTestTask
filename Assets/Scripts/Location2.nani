@@ -5,6 +5,7 @@
 @char Jody look:Left pos:75 scale:4.8
 
 @wait 0.5
+@char ElenNovel.Greeting
 ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч?
 
 @set triesSword=0
@@ -13,7 +14,10 @@ ElenNovel: Привет. Меня зовут {name} и мне приятно с 
 @wait 0.5
 
 @printer Bubble.Right pos:52,68
+@char Jody.Greeting
 Jody: Меня зовут Jody и мне приятно с тобой познакомиться. Да я покажу тебе, где ты сможешь достать меч.
+@char Jody.HandsForward
+Jody: "Вот место, где ты сможешь достать шлем"
 @goto .GetSword
 
 # GetSword
@@ -23,6 +27,7 @@ Jody: Меня зовут Jody и мне приятно с тобой позна
 
 # JodyRepeatGetSword
 @printer Bubble.Right pos:52,68
+@char Jody.Dismissing
 Jody: Ты не достал меч. Иди и принеси меч.
 @goto .GetSword
 
@@ -32,13 +37,16 @@ Jody: Ты достал меч. Молодец. Мне нужен шлем. Я �
 
 @wait 0.5
 @printer Dialogue
+@char ElenNovel.Thinking
 ElenNovel: Хорошо.Я принесу тебе шлем.
+@showLog name:"Достать шлем для Jody"
 @set pathHelmet=true
 @char Helmet pos:8,95
 @lock SuperHelmet
 
 @printer Bubble.Right pos:52,68
-Jody: Вот место, где ты сможешь достать шлем
+@char Jody.HandsForward
+Jody: "Вот место, где ты сможешь достать шлем"
 @goto .GetHelmet
 
 # GetHelmet
@@ -48,6 +56,7 @@ Jody: Вот место, где ты сможешь достать шлем
 
 # JodyRepeatGetHelmet
 @printer Bubble.Right pos:52,68
+@char Jody.Dismissing
 Jody: Ты не достал шлем. Иди и принеси шлем.
  @goto .GetHelmet
 
