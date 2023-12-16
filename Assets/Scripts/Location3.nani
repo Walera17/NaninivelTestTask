@@ -5,14 +5,14 @@
 
 # GetWeapon
 @back Loc3 time:1
-
-@char SwordGame pos:75,80 if:"!pathHelmet && triesSword==0"
-@char HelmetGame pos:75,40 if:"pathHelmet && triesHelmet==0"
+@char SwordGame.Deselect pos:75,80 if:"!pathHelmet && triesSword==0"
+@char HelmetGame.Deselect pos:75,40 if:"pathHelmet && triesHelmet==0"
 @show SwordGame if:triesSword>0
 @show HelmetGame if:triesHelmet>0
 
 @printer Dialogue
-@print text:"Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
+
+@print text:"Выберете объект на карте и Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
 @hidePrinter
 @stopBgm Locat2 fade:1 wait:false
 @bgm Game fade:1 wait:false loop:true
@@ -20,22 +20,27 @@
 
 @if !pathHelmet
     @set triesSword++
-    @startGame name:GameSword
+    @char SwordGame.Select
+    ;@startGame name:GameSword
     @stop
 @else
     @set triesHelmet++
-    @startGame name:GameHelmet
+    @char HelmetGame.Select
+    ;@startGame name:GameHelmet
     @stop
 
 # Choices
 @goto .SwordReward if:"RewardExist("Sword") && !RewardExist("Helmet") && !pathHelmet"
 @goto .HelmetReward if:"RewardExist("Helmet") && !finishGame"
+@char SwordGame.Deselect
 @hide SwordGame
+@char HelmetGame.Deselect if:triesHelmet>0
 @hide HelmetGame if:triesHelmet>0
 @goto Location2.Choices
 
 # SwordReward
 @unlock SuperSword
+@char SwordGame.Deselect
 @showLog name:"Меч для Sophie получен"
 @print text:"Поздравляем. Вы получили меч!"
 @hide SwordGame
@@ -43,6 +48,7 @@
 
 # HelmetReward
 @unlock SuperHelmet
+@char HelmetGame.Deselect
 @set finishGame=true
 @showLog name:"Шлем для Jody получен"
 @print text:"Поздравляем. Вы получили шлем!"
