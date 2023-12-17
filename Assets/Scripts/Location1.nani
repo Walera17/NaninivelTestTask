@@ -37,10 +37,10 @@ ElenNovel: Хорошо.Я достану и принесу тебе меч.
 
 @char Sophie.Greeting
 Sophie: Привет {name} - Я хочу получить меч, который заказывала. Я хорошо заплачу.[skipInput]
-@wait 0.5
+@wait 1
 @char Jody.Greeting
 Jody: Привет {name} - Я хочу получить шлем, который заказывала. Я хорошо заплачу.[skipInput]
-@wait 0.5
+@wait 1
 @hidePrinter
 
 # Choice
@@ -50,7 +50,7 @@ Jody: Привет {name} - Я хочу получить шлем, которы�
 @choice "Отдать только Sophie" goto:.OnlySophie
 @choice "Отдать только Jody" goto:.OnlyJody
 @choice "Отдать Sophie и Jody" goto:.Sophie&Jody
-@choice handler:ButtonArea button:MapButton pos:750,200 goto:.Location3
+@choice handler:ButtonArea button:MapButton pos:870,460 goto:.Location3
 
 @stop
 

@@ -211,16 +211,16 @@ MonoBehaviour:
       guid: d5639d404c7ac4d42ba34b1915158285
     - name: Game
       pathPrefix: Backgrounds/MainBackground
-      guid: 720bff9898a497748ac6f2886fced7fb
+      guid: cc1f17f2ef6039e40bc1831e1d804619
     - name: Loc1
       pathPrefix: Backgrounds/MainBackground
-      guid: 9f0a24a78838c9745a6d184bd3756001
+      guid: 6595de525e9d42f489feba004ee5398b
     - name: Loc2
       pathPrefix: Backgrounds/MainBackground
-      guid: a25d186864eac834c93d7ba08000399d
+      guid: 14c45a063a38ce240a4db979763167a1
     - name: Loc3
       pathPrefix: Backgrounds/MainBackground
-      guid: 0d29d94ec42d34e448e9e26936b7640b
+      guid: 5714a83b05c4ce24ba0cd199fe43ae2e
   - Id: Unlockables
     Resources:
     - name: sword
