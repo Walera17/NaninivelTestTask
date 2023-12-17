@@ -15,7 +15,7 @@ Sophie: Меня зовут Sophie и мне приятно с тобой поз
 @printer Dialogue
 @char ElenNovel.Thinking
 @wait 2.5
-ElenNovel: Хорошо.Я достану и принесу тебе меч. 
+ElenNovel: Хорошо.Я достану и принесу тебе меч.
 @showLog name:"Достать меч для Sophie"
 
 @set finishGame=false
@@ -30,14 +30,60 @@ ElenNovel: Хорошо.Я достану и принесу тебе меч.
 @showLog name:"Все задачи выполнены."
 @hideUI QuestUI time:5  wait:false
 @back Loc1 time:1
+
 @char ElenNovel look:Right pos:25
 @char Jody look:Left pos:50
 @char Sophie look:Left pos:75
 
+@char Sophie.Greeting
+Sophie: Привет {name} - Я хочу получить меч, который заказывала. Я хорошо заплачу.[skipInput]
+@wait 0.5
+@char Jody.Greeting
+Jody: Привет {name} - Я хочу получить шлем, который заказывала. Я хорошо заплачу.[skipInput]
+@wait 0.5
+@hidePrinter
 
+# Choice
+@wait 3.2
+@showUI time:1 wait:false
+@choice "Оставить предметы себе" goto:.Self
+@choice "Отдать только Sophie" goto:.OnlySophie
+@choice "Отдать только Jody" goto:.OnlyJody
+@choice "Отдать Sophie и Jody" goto:.Sophie&Jody
+@choice handler:ButtonArea button:MapButton pos:750,200 goto:.Location3
 
+@stop
 
+# Self
+@hideUI time:1
+@wait 0.6
+@char Sophie.Insult 
+@char Jody.Taunt
+@goto .Choice
 
-@choice handler:ButtonArea button:MapButton pos:750,200 goto:Location3
+# OnlySophie
+@hideUI time:1
+@wait 0.6
+@char Sophie.Thankful
+@char Jody.Whatever
+@goto .Choice
+
+# OnlyJody
+@hideUI time:1
+@wait 0.6
+@char Sophie.Whatever
+@char Jody.Thankful
+@goto .Choice
+
+# Sophie&Jody
+@hideUI time:1
+@wait 0.6
+@char Sophie.Thankful
+@char Jody.Thankful
+@goto .Choice
+
+# Location3
+@hideUI time:1 wait:false
+@goto Location3
 
 @stop
