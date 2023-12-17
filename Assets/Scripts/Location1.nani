@@ -1,7 +1,7 @@
 @back Loc1 time:1
 @bgm Locat1 fade:1 wait:false loop:true
 @wait 0.5
-@char Sophie look:Left pos:75 scale:4.8
+@char Sophie look:Left pos:75
 @showUI QuestUI
 @wait 0.5
 @char ElenNovel.Greeting
@@ -50,7 +50,7 @@ Jody: Привет {name} - Я хочу получить шлем, которы�
 @choice "Отдать только Sophie" goto:.OnlySophie
 @choice "Отдать только Jody" goto:.OnlyJody
 @choice "Отдать Sophie и Jody" goto:.Sophie&Jody
-@choice handler:ButtonArea button:MapButton pos:870,460 goto:.Location3
+@choice handler:ButtonArea button:MapButtons/GlobalMap pos:870,460 goto:.Location3
 
 @stop
 

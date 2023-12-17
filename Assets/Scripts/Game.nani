@@ -6,7 +6,7 @@
 @stop
 
 @set PlayerName=name
-@char ElenNovel look:Right pos:25 scale:5.0 wait:false
+@char ElenNovel look:Right pos:25 wait:false
 
 @printer Dialogue
 @wait 0.75

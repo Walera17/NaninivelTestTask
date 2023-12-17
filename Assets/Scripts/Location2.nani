@@ -2,7 +2,7 @@
 @stopBgm Locat1 fade:1 wait:false
 @bgm Locat2 fade:1 wait:false loop:true
 @wait 0.5
-@char Jody look:Left pos:75 scale:4.8
+@char Jody look:Left pos:75
 
 @wait 0.5
 @char ElenNovel.Greeting
@@ -23,7 +23,7 @@ Jody: Вот место,где ты сможешь достать меч
 
 # GetSword
 @hidePrinter
-@choice handler:MyHandlerSword button:SwordGame pos:750,350 goto:.GotoLocation3
+@choice handler:MyHandlerSword button:MapButtons/SwordGame pos:750,350 goto:.GotoLocation3
 @stop
 
 # JodyRepeatGetSword
@@ -56,7 +56,7 @@ Jody: Вот место, где ты сможешь достать шлем
 
 # GetHelmet
 @hidePrinter
-@choice handler:MyHandlerHelmet button:HelmetGame pos:750,100 goto:.GotoLocation3
+@choice handler:MyHandlerHelmet button:MapButtons/HelmetGame pos:750,100 goto:.GotoLocation3
 @stop
 
 # JodyRepeatGetHelmet

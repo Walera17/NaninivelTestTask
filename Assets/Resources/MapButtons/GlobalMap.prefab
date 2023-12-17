@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114935234543976500}
   - component: {fileID: 8073050214690735864}
   m_Layer: 5
-  m_Name: MapButton
+  m_Name: GlobalMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
