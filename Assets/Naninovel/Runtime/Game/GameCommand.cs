@@ -42,4 +42,18 @@ namespace Naninovel.Runtime.Game
             return default;
         }
     }
+
+    [CommandAlias("quitGame")]
+    public class QuitGame : Command
+    {
+        public StringParameter Name;
+
+        public override UniTask ExecuteAsync(AsyncToken asyncToken = default)
+        {
+            GameService gameService = Engine.GetService<GameService>();
+
+            gameService.QuitGame();
+            return default;
+        }
+    }
 }

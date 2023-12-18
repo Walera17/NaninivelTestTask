@@ -1,0 +1,44 @@
+; English <en> to Russian <ru> localization document for `Location1` naninovel script
+
+# ef37f73e
+; ElenNovel: Hello. My name is {name} and I am pleased to meet you
+ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться
+
+# b3cd2fc7
+; Sophie: My name is Sophie and I am pleased to meet you. I need a sword. I will pay well. Will you get?
+Sophie: Меня зовут Софи и мне приятно с тобой познакомиться. Мне нужен меч. Я хорошо заплачу. Добудешь?
+
+# 4b4f2ec8
+; ElenNovel: Good. [set getMessage="Get a sword for Sophie"][set failedMessage="Failed to get a sword"][set receivedMessage="Sophie's sword received"] I'll get it and bring you a sword.
+ElenNovel: Хорошо. [set getMessage="Добыть меч для Софи"][set failedMessage="Не удалось достать меч"][set receivedMessage="Меч для Софи получен"] Я достану меч и принесу его тебе.
+
+# c5d6acad
+; ElenNovel: Hello.[set message="All tasks are completed."] I am glad to see you. I've got it all.
+ElenNovel: Привет.[set message="Все поставленные задачи выполнены."] Рад Вас видеть. У меня есть все.
+
+# 20afd0d6
+; Sophie: Hello {name} - I want to get a sword that I ordered. I will pay well.
+Sophie: Привет {name} - Я хочу получить меч, который заказывала. Я хорошо заплачу.
+
+# d5417781
+; Jody: Hello {name} - I want to get a helmet that I ordered. I'll pay well.
+Jody: Привет {name} - Я хочу получить шлем, который заказывала. Я хорошо заплачу.
+
+# 29d5addb
+; @choice "Leave objects to yourself" goto:.Self
+@choice "Оставить предметы себе" goto:.Self
+
+# 3ac67c06
+; @choice "Give only Sophie" goto:.OnlySophie
+@choice "Отдать только Софи" goto:.OnlySophie
+
+# 88d04c00
+; @choice "Give only Jody" goto:.OnlyJody
+@choice "Отдать только Джуди" goto:.OnlyJody
+
+# b1de6d3c
+; @choice "Give Sophie and Jody" goto:.Sophie&Jody
+@choice "Отдать Софи и Джуди" goto:.Sophie&Jody
+
+# bc4ac360
+; @choice handler:ButtonArea button:MapButtons/GlobalMap pos:870,460 goto:.Location3

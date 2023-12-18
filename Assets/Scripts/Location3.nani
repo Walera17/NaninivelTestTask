@@ -13,7 +13,7 @@
 @hide HelmetGame if:!pathHelmet
 
 @printer Dialogue
-@print text:"Выберете объект на карте и Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
+@print text:"Choose an object on the map and you will go to a mini game where you need to destroy all enemies in order to get a prize."
 @hidePrinter
 @stopBgm Locat2 fade:1 wait:false
 @bgm Game fade:1 wait:false loop:true
@@ -39,8 +39,8 @@
 # SwordReward
 @unlock SuperSword
 @char SwordGame.Default
-@showLog name:"Меч для Sophie получен"
-@print text:"Поздравляем. Вы получили меч!"
+@showLog name:{receivedMessage}
+@print text:"Congratulations. You got a sword!"
 @hide SwordGame
 @goto Location2.Choices
 
@@ -48,14 +48,9 @@
 @unlock SuperHelmet
 @char HelmetGame.Default
 @set finishGame=true
-@showLog name:"Шлем для Jody получен"
-@print text:"Поздравляем. Вы получили шлем!"
+@showLog name:{receivedMessage}
+@print text:"Congratulations. You got a helmet!"
 @hide HelmetGame,SwordGame
-
-@printer Dialogue
-@print text:"Все задачи выполнены."
-@hidePrinter 
-
 @goto Location1.FinishDialog
 
 @stop

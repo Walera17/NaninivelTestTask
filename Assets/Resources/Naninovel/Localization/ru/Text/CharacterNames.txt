@@ -1,0 +1,10 @@
+; English <en> to Russian <ru> localization document for `CharacterNames` managed text document
+
+Elen: Элен
+ElenNovel: {PlayerName}
+Helmet: Helmet
+HelmetGame: HelmetGame
+Jody: Джоди
+Sophie: Софи
+Sword: Sword
+SwordGame: SwordGame

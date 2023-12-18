@@ -1,0 +1,9 @@
+; English <en> to Russian <ru> localization document for `Game` naninovel script
+
+# 70cdc517
+; @input name summary:"Choose a Player Name"
+@input name summary:"Выберете имя игрока"
+
+# 64721954
+; ElenNovel: Hello {name} - I am your avatar and I am pleased to meet you[set message="The progress of quests will be displayed here"]
+ElenNovel: Привет {name} - Я твой аватар, и я рад познакомиться с тобой[set message="Здесь будет отображаться прогресс квестов"]

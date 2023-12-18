@@ -2,7 +2,7 @@
 
 @bgm Game fade:1 wait:false
 
-@input name summary:"Выберете имя игрока"
+@input name summary:"Choose a Player Name"
 @stop
 
 @set PlayerName=name
@@ -10,8 +10,12 @@
 
 @printer Dialogue
 @wait 0.75
-ElenNovel: Привет {name} - я твой аватар и мне приятно с тобой познакомиться
+ElenNovel: Hello {name} - I am your avatar and I am pleased to meet you[set message="The progress of quests will be displayed here"]
 
+@showUI QuestUI
+@showLog name:{message}
+
+@wait 0.75
 @hidePrinter
 @stopBgm Game fade:1 wait:false
 @goto Location1 

@@ -6,17 +6,17 @@
 
 @wait 0.5
 @char ElenNovel.Greeting
-ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч?
+ElenNovel: Hello. My name is {name} and I am pleased to meet you. Do you know where to get the sword?
 
 @set pathHelmet=false
 @wait 0.5
 
 @printer Bubble.Right pos:52,68
 @char Jody.Greeting
-Jody: Меня зовут Jody и мне приятно с тобой познакомиться. Да я покажу тебе, где ты сможешь достать меч.
+Jody: My name is Jody and I am pleased to meet you. Yes, I will show you where you can get a sword.
 @wait 0.5
 @char Jody.HandsForward
-Jody: Вот место,где ты сможешь достать меч
+Jody: Here's a place where you can get a sword
 @hidePrinter
 @goto .GetSword
 @stop
@@ -27,31 +27,32 @@ Jody: Вот место,где ты сможешь достать меч
 @stop
 
 # JodyRepeatGetSword
+@showLog name:{failedMessage}
 @printer Bubble.Right pos:52,68
-@showLog name:"Не удалось достать меч"
 @char Jody.Dismissing
-Jody: Ты не достал меч. Иди и принеси меч.
+Jody: You did not get a sword. Go and bring the sword.
 @goto .GetSword
 
 # JodyGetHelmet
 @printer Bubble.Right pos:52,68
 @wait 0.5
 @char Jody.HappyHand
-Jody: Ты достал меч. Молодец. Мне нужен шлем. Я хорошо заплачу. Добудешь?
+Jody: You took out a sword. Well done. I need a helmet. I will pay well. Will you get?
 
 @wait 0.5
 @printer Dialogue
 @char ElenNovel.Thinking
 @wait 2.5
-ElenNovel: Хорошо.Я принесу тебе шлем.
-@showLog name:"Достать шлем для Jody"
+ElenNovel: Good.[set getMessage="Get a helmet for Jody"][set failedMessage="Failed to get a helmet"][set receivedMessage="Helmet for Jody received"] I will bring you a helmet.
+
+@showLog name:{getMessage}
 @set pathHelmet=true
 @char Helmet pos:8,95
 @lock SuperHelmet
 
 @printer Bubble.Right pos:52,68
 @char Jody.HandsForward
-Jody: Вот место, где ты сможешь достать шлем
+Jody: Here's the place where you can get your helmet
 @goto .GetHelmet
 
 # GetHelmet
@@ -60,11 +61,11 @@ Jody: Вот место, где ты сможешь достать шлем
 @stop
 
 # JodyRepeatGetHelmet
-@printer Bubble.Right pos:52,68
-@showLog name:"Не удалось достать шлем"
+@showLog name:{failedMessage}
+@printer Bubble.Right pos:52,68 
 @char Jody.Dismissing
-Jody: Ты не достал шлем. Иди и принеси шлем.
- @goto .GetHelmet
+Jody: You didn't get your helmet out. Go and fetch a helmet.
+@goto .GetHelmet
 
 # Choices
 @stopBgm Game fade:1 wait:false

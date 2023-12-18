@@ -1,0 +1,39 @@
+; English <en> to Russian <ru> localization document for `Location2` naninovel script
+
+# 5e4392db
+; ElenNovel: Hello. My name is {name} and I am pleased to meet you. Do you know where to get the sword?
+ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться. Ты знаешь, где достать меч?
+
+# d0e48422
+; Jody: My name is Jody and I am pleased to meet you. Yes, I will show you where you can get a sword.
+Jody: Меня зовут Джоди и мне приятно с тобой познакомиться. Да я покажу тебе, где ты сможешь достать меч.
+
+# f472beab
+; Jody: Here's a place where you can get a sword
+Jody: Вот место,где ты сможешь достать меч
+
+# d84dfd74
+; @choice handler:MyHandlerSword button:MapButtons/SwordGame pos:750,350 goto:.GotoLocation3
+
+# 98f3ce4
+; Jody: You did not get a sword. Go and bring the sword.
+Jody: Ты не достал меч. Иди и принеси меч.
+
+# 287d62d9
+; Jody: You took out a sword. Well done. I need a helmet. I will pay well. Will you get?
+Jody: Ты достал меч. Молодец. Мне нужен шлем. Я хорошо заплачу. Добудешь?
+
+# 1482f06a
+; ElenNovel: Good.[set getMessage="Get a helmet for Jody"][set failedMessage="Failed to get a helmet"][set receivedMessage="Helmet for Jody received"] I will bring you a helmet.
+ElenNovel: Хорошо.[set getMessage="Достать шлем для Джоди"][set failedMessage="Не удалось достать шлем"][set receivedMessage="Шлем для Джоди получен"] Я принесу тебе шлем.
+
+# 9b3d8192
+; Jody: Here's the place where you can get your helmet
+Jody: Вот место, где ты сможешь достать шлем
+
+# 593f08bc
+; @choice handler:MyHandlerHelmet button:MapButtons/HelmetGame pos:750,100 goto:.GotoLocation3
+
+# 59b672db
+; Jody: You didn't get your helmet out. Go and fetch a helmet.
+Jody: Ты не достал шлем. Иди и принеси шлем.

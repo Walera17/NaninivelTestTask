@@ -1,0 +1,13 @@
+; English <en> to Russian <ru> localization document for `Location3` naninovel script
+
+# 532afe12
+; @print text:"Choose an object on the map and you will go to a mini game where you need to destroy all enemies in order to get a prize."
+@print text:"Выберете объект на карте и Вы перейдете в мини игру, где нужно уничтожить всех врагов, чтобы получить приз."
+
+# 88b96a6a
+; @print text:"Congratulations. You got a sword!"
+@print text:"Поздравляем. Вы получили меч!"
+
+# fd996e1a
+; @print text:"Congratulations. You got a helmet!"
+@print text:"Поздравляем. Вы получили шлем!"

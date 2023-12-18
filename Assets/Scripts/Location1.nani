@@ -2,21 +2,21 @@
 @bgm Locat1 fade:1 wait:false loop:true
 @wait 0.5
 @char Sophie look:Left pos:75
-@showUI QuestUI
 @wait 0.5
 @char ElenNovel.Greeting
-ElenNovel: Привет. Меня зовут {name} и мне приятно с тобой познакомиться
+ElenNovel: Hello. My name is {name} and I am pleased to meet you
 
 @printer Bubble.Right pos:52,68
 @char Sophie.Greeting
-Sophie: Меня зовут Sophie и мне приятно с тобой познакомиться. Мне нужен меч. Я хорошо заплачу. Добудешь?
+Sophie: My name is Sophie and I am pleased to meet you. I need a sword. I will pay well. Will you get?
 
 @wait 0.5
 @printer Dialogue
 @char ElenNovel.Thinking
 @wait 2.5
-ElenNovel: Хорошо.Я достану и принесу тебе меч.
-@showLog name:"Достать меч для Sophie"
+ElenNovel: Good. [set getMessage="Get a sword for Sophie"][set failedMessage="Failed to get a sword"][set receivedMessage="Sophie's sword received"] I'll get it and bring you a sword.
+
+@showLog name:{getMessage}
 
 @set finishGame=false
 @char Sword pos:3,95
@@ -27,29 +27,28 @@ ElenNovel: Хорошо.Я достану и принесу тебе меч.
 @goto Location2
 
 # FinishDialog
-@showLog name:"Все задачи выполнены."
-@hideUI QuestUI time:5  wait:false
 @back Loc1 time:1
-
 @char ElenNovel look:Right pos:25
 @char Jody look:Left pos:50
 @char Sophie look:Left pos:75
+ElenNovel: Hello.[set message="All tasks are completed."] I am glad to see you. I've got it all.
+@showLog name:{message}
 
+@wait 1
 @char Sophie.Greeting
-Sophie: Привет {name} - Я хочу получить меч, который заказывала. Я хорошо заплачу.[skipInput]
-@wait 1
+Sophie: Hello {name} - I want to get a sword that I ordered. I will pay well.
 @char Jody.Greeting
-Jody: Привет {name} - Я хочу получить шлем, который заказывала. Я хорошо заплачу.[skipInput]
-@wait 1
+Jody: Hello {name} - I want to get a helmet that I ordered. I'll pay well.
 @hidePrinter
+@hideUI QuestUI time:5  wait:false
 
 # Choice
 @wait 3.2
 @showUI time:1 wait:false
-@choice "Оставить предметы себе" goto:.Self
-@choice "Отдать только Sophie" goto:.OnlySophie
-@choice "Отдать только Jody" goto:.OnlyJody
-@choice "Отдать Sophie и Jody" goto:.Sophie&Jody
+@choice "Leave objects to yourself" goto:.Self
+@choice "Give only Sophie" goto:.OnlySophie
+@choice "Give only Jody" goto:.OnlyJody
+@choice "Give Sophie and Jody" goto:.Sophie&Jody
 @choice handler:ButtonArea button:MapButtons/GlobalMap pos:870,460 goto:.Location3
 
 @stop
@@ -57,7 +56,7 @@ Jody: Привет {name} - Я хочу получить шлем, которы�
 # Self
 @hideUI time:1
 @wait 0.6
-@char Sophie.Insult 
+@char Sophie.Insult
 @char Jody.Taunt
 @goto .Choice
 

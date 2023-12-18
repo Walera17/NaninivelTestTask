@@ -1330,7 +1330,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.8, y: 4.8, z: 4.8}
+  m_LocalScale: {x: 4.6, y: 4.6, z: 4.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9210463156584865966}
@@ -3402,7 +3402,7 @@ MonoBehaviour:
   onVisibilityChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2967453994864690587}
+      - m_Target: {fileID: 7589653400694994603}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 0
